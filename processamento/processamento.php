@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-require "funcoesBD.php";
+require_once("../controller/Controlador.php");
 require_once("../model/Produto.php");
 
 $controlador = new Controlador();
@@ -32,7 +32,7 @@ if(isset($_POST['inputNome']) && isset($_POST['inputSobrenome']) &&
     $email = $_POST['inputEmail'];
     $senha = $_POST['inputSenha'];
     
-    inserirCliente($cpf, $nome, $sobrenome, $dataNasc, $telefone, $email, $senha);
+    $controlador->cadastrarCliente($cpf, $nome, $sobrenome, $dataNasc, $telefone, $email, $senha);
 
     header('Location:../view/cadastroCliente.php');
     die();
@@ -52,7 +52,7 @@ if(isset($_POST['inputNomeFunc']) && isset($_POST['inputSobrenomeFunc']) &&
     $email = $_POST['inputEmailFunc'];
     $salario = $_POST['inputSalarioFunc'];
     
-    inserirFuncionario($cpf, $nome, $sobrenome, $dataNasc, $telefone, $email, $salario);
+    $controlador->cadastrarFuncionario($cpf, $nome, $sobrenome, $dataNasc, $telefone, $email, $salario);
 
     header('Location:../view/cadastroFuncionario.php');
     die();

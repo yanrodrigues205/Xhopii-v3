@@ -1,9 +1,3 @@
-<?php
-    
-    require "../processamento/funcoesBD.php";
-
-?>
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -40,7 +34,11 @@
     <section class="conteudo-visualizar">
         <section class="conteudo-visualizar-box">
             <h1>Funcionários</h1>
-            <!-- INSERIR AQUI O RESULTADO DA CONSULTA POR FUNCIONÁRIOS -->
+            <?php
+            require_once("../controller/Controlador.php");
+                $control = new Controlador();
+               echo  $control->visualizarFucionario();
+            ?>
         </section>
     </section>
 
