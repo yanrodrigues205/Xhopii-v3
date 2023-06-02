@@ -4,27 +4,34 @@ class Cliente{
 
     protected $nome;
     protected $cpf;
-    protected $idade;
-    protected $rg;
+    protected $sobrenome;
+    protected $datanasc;
 
-    public function __construct($Nome, $Cpf, $Idade, $Rg)
+    protected $telefone;
+    protected $email;
+    protected $senha;
+
+    public function __construct($Nome, $Cpf, $sobrenome, $datanasc, $telefone, $senha, $email)
     {
         $this->nome = $Nome;
         $this->cpf = $Cpf;
-        $this->idade = $Idade;
-        $this->rg = $Rg;
+        $this->sobrenome = $sobrenome;
+        $this->datanasc = $datanasc;
+        $this->telefone = $telefone;
+        $this->email = $email;
+        $this->senha = $senha;
     }
 
     public function get_nome(){
         return($this->nome);
     }
 
-    public function get_rg(){
-        return($this->rg);
+    public function get_datanasc(){
+        return($this->datanasc);
     } 
 
-    public function get_idade(){
-        return($this->idade);
+    public function get_sobrenome(){
+        return($this->sobrenome);
     } 
 
     public function get_cpf(){
@@ -37,11 +44,29 @@ class Cliente{
     public function set_cpf($Cpf){
         $this->cpf = $Cpf;
     }
-    public function set_rg($Rg){
-        $this->rg = $Rg;
+    public function set_datanasc($datanasc){
+        $this->datanasc = $datanasc;
     }
-    public function set_idade($Idade){
-        $this->idade = $Idade;
+    public function set_sobrenome($sobrenome){
+        $this->sobrenome = $sobrenome;
+    }
+    public function get_telefone(){
+        return($this->telefone);
+    }
+    public function get_email(){
+        return($this->email);
+    }
+    public function set_telefone($telefone){
+        $this->telefone = $telefone;
+    }
+    public function set_email($email){
+        $this->email = $email;
+    }
+    public function get_senha(){
+        return($this->senha);
+    }
+    public function set_senha($senha){
+        $this->senha = $senha;
     }
 }
 
